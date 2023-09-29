@@ -144,7 +144,7 @@ elif [[ "$ACTION" == "uninstall" ]]; then
   rm -vf /etc/sudoers.d/partytime
   rm -vf /etc/xdg/autostart/partytime.desktop
   rm -vrf "$INSTALLDIR"
-  userdel -r partytime
+  userdel partytime
   
   # Check if the INSDIR
   if [[ -d $INSDIR ]]; then
