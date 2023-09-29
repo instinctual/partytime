@@ -2,7 +2,7 @@
 
 Join in the render party.
 
-Utilize idle workstations join BackBurner Server Groups when no one is logged into the machine.
+Utilize idle workstations to join BackBurner Server render Groups when no one is logged into the machine.
 
 Upon GUI login to machine, PartyTime will remove machine from pre-defined BackBurner Server groups.
 Upon logout,shutdown or reboot, the machine is added back to the groups.
