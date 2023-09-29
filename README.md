@@ -1,16 +1,28 @@
 # partytime
+
 Join in the render party.
 
 Have machines join BackBurner Server Groups when no one is logged into the machine.
-This will take advantage of idle hardware resources.
 
 Upon GUI login to machine, PartyTime will remove machine from pre-defined BackBurner Server groups.
-Upon logout,shutdown or reboot, the machine is added back to the groups.  
+Upon logout,shutdown or reboot, the machine is added back to the groups.
 
-partytime.conf is used to define the BackBurner Manager and groups to party with.
+## Installation
+
+
+### **Required Configuration:**
+
+ 1. **Modify Configuration file**
+      In`/opt/instinctual/partytime/partytime.conf` modify the parameters to match your infrastructure.
+    
+ 2. **Add a `partytime` user to Backburner Manager**
+		In BackBurner Monitor gui:	
+	 1. Press Gear icon
+	 2. Under Administrator Users click Add
+	 3. type in `partytime`
+	 4. Press `enter`
+	 5. Click `Save` at bottom of app
 
 You can test functionality via the command line.
-
-``` partytime.sh --add``` will add the machine to the group(s) defined in partytime.conf
-
-``` partytime.sh --remove``` will remove the machine from the group(s) defined in partytime.conf
+`/opt/instinctual/partytime/partytime.sh --add` will add the machine to the group(s) defined in partytime.conf
+`/opt/instinctual/partytime/partytime.sh --remove` will remove the machine from the group(s) defined in partytime.conf
