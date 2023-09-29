@@ -12,7 +12,7 @@ Upon logout,shutdown or reboot, the machine is added back to the groups.
 1. Download latest release.
 2. unzip on linux machine.
 3.  `cd partytime-`*version number*
-4. run `sudo ./INSTALL.sh`
+4. run `sudo ./INSTALL.sh --install`
 
 ### **Required Configuration:**
 
@@ -36,5 +36,8 @@ You can test functionality via the command line.
 `/opt/instinctual/partytime/partytime.sh --add` will add the machine to the group(s) defined.
 
 `/opt/instinctual/partytime/partytime.sh --remove` will remove the machine from the group(s) defined.
+
+## Un-Install
+1. run `sudo ./INSTALL.sh --uninstall`
 
 ## When machine has Teradici/PCoIP active, PartyTime will act in a "remove always" mode, since Burn and other GPU based renders don't work.
