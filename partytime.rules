@@ -1,0 +1,3 @@
+ALL ALL=(partytime) NOPASSWD: /opt/instinctual/partytime/partytime.sh --remove, \                      
+                              /opt/instinctual/partytime/partytime.sh --add
+ 

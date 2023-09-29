@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Instinctual PartyTime
+Type=Application
+Exec=/opt/instinctual/partytime/partytimewrapper.sh
+Name[en_US]=Instinctual PartyTime
