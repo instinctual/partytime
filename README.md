@@ -42,8 +42,7 @@ You can test functionality via the command line.
 `/opt/instinctual/partytime/partytime.sh --add` will add the machine to the group(s) defined.
 
 `/opt/instinctual/partytime/partytime.sh --remove` will remove the machine from the group(s) defined.
+## When machine has Teradici/PCoIP active, PartyTime will act in a "remove always" mode, since Burn and other GPU based renders won't work.
 #
 ## Un-Install
 1. run `sudo ./INSTALL.sh --uninstall`
-
-## When machine has Teradici/PCoIP active, PartyTime will act in a "remove always" mode, since Burn and other GPU based renders won't work.
