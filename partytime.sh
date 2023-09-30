@@ -60,6 +60,11 @@ bbmgetserverlistxml(){
     BBGROUPSERVERS=$(echo "$BBGROUPINFO" | xmlstarlet sel -t -v "/info/servers")
 }
 
+# Add the current host to the server XML list
+bbmaddserverxml(){
+    BBGROUPINFO=$(echo $BBGROUPINFO | xmlstarlet ed --update "/info/servers" -x "concat(.,',${CURRENTHOST}')")
+}
+
 # Remove the current hostname from the server list
 bbmremovehostxml(){
     BBGROUPSERVERS=$(echo $BBGROUPSERVERS | sed "s/\b$CURRENTHOST\b//; s/,,/,/; s/^,//; s/,$//")
@@ -93,7 +98,7 @@ for BBGROUP in "${BBGROUPS[@]}"; do
         bbmgetserverlistxml
         if ! echo $BBGROUPSERVERS | grep -q "\<${CURRENTHOST}\>"; then
             # If not, add the current host to the server XML list
-            BBGROUPINFO=$(echo $BBGROUPINFO | xmlstarlet ed --update "/info/servers" -x "concat(.,',${CURRENTHOST}')")
+            bbmaddserverxml
         fi
     elif [[ $ACTION == "remove" ]]; then
         bbmgetserverlistxml
