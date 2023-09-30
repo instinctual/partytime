@@ -7,6 +7,7 @@ After=network-online.target
 Type=oneshot
 ExecStart=/opt/instinctual/partytime/partytime.sh --add
 User=partytime
+TimeoutStartSec=30
 
 [Install]
 WantedBy=multi-user.target
