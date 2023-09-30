@@ -9,6 +9,10 @@ Upon logout,shutdown or reboot, the machine is added back to the groups.
 
 ## Demostration video:
 https://youtu.be/4w36Qi4Bhsg
+#
+## Important Installation info:
+You must configure your partytime.conf file and reboot. PartyTime will not work as you see in the video until you have done this.  
+# 
 
 ## Installation
 
@@ -32,10 +36,7 @@ https://youtu.be/4w36Qi4Bhsg
 			4. Press `enter`
 			5. Click `Save` at bottom of app
 ![Backburner AddUser gif](https://github.com/instinctual/partytime/blob/3a3d93d6c8312fb857224a0cc9ebd336278c1ff0/adduser.gif)
-# Important Installation info:
- ### You must configure your partytime.conf file and reboot. PartyTime will not work as you see in the video until you have done this.  
-
-# 
+#
 You can test functionality via the command line.
 
 `/opt/instinctual/partytime/partytime.sh --add` will add the machine to the group(s) defined.
