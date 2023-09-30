@@ -73,7 +73,7 @@ bbmupdateserverlistxml(){
 #Sumbit the modified XML list to Backburner Manager
 bbmsubmitxml(){
     /opt/Autodesk/wiretap/tools/current/wiretap_set_metadata -h $BBMANAGER:Backburner -n /servergroups/$BBGROUP -s info -f /dev/stdin <<<"$BBGROUPINFO"
-    sleep 1
+    sleep 2
 }
 
 # Check if PCOIP is active.  If so, then override ACTION and set to 'remove' since Burn expects to have a local window manager running and errors out if not.  
