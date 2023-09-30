@@ -40,4 +40,4 @@ You can test functionality via the command line.
 ## Un-Install
 1. run `sudo ./INSTALL.sh --uninstall`
 
-## When machine has Teradici/PCoIP active, PartyTime will act in a "remove always" mode, since Burn and other GPU based renders don't work.
+## When machine has Teradici/PCoIP active, PartyTime will act in a "remove always" mode, since Burn and other GPU based renders won't work.
