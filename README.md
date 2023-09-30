@@ -38,6 +38,7 @@ You must configure your partytime.conf file and reboot. PartyTime will not work 
 			4. Press `enter`
 			5. Click `Save` at bottom of app
 ![Backburner AddUser gif](https://github.com/instinctual/partytime/blob/3a3d93d6c8312fb857224a0cc9ebd336278c1ff0/adduser.gif)
+3. **Reboot**
 #
 You can test functionality via the command line.
 
