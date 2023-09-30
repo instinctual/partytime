@@ -11,7 +11,9 @@ Upon logout,shutdown or reboot, the machine is added back to the groups.
 https://youtu.be/4w36Qi4Bhsg
 #
 ## Important Installation info:
-You must configure your partytime.conf file and reboot. PartyTime will not work as you see in the video until you have done this.  
+`xmlstarlet` is a required package.  The INSTALL.sh script will automatically prompt to install this via the internet.  If this is not desired, manually install the `xmlstarlet` RPM prior to running PartyTime installer.
+
+You must configure your partytime.conf file and reboot. PartyTime will not work until you have done this.  
 # 
 
 ## Installation
