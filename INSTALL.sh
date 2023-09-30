@@ -120,7 +120,7 @@ if [[ $ACTION == "install" ]]; then
   install -m 555 partytime.service /etc/systemd/system/partytime.service
   systemctl daemon-reload
   echo "Starting PartyTime service."
-  systemctl enable --now partytime.service
+  systemctl enable partytime.service
   
   echo
   echo "██████   █████  ██████  ████████ ██    ██ ████████ ██ ███    ███ ███████            "

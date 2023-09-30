@@ -7,6 +7,13 @@ Utilize idle workstations to join BackBurner Server render Groups when no one is
 Upon GUI login to machine, PartyTime will remove machine from pre-defined BackBurner Server groups.
 Upon logout,shutdown or reboot, the machine is added back to the groups.
 
+## Demostration video:
+https://youtu.be/4w36Qi4Bhsg
+#
+## Important Installation info:
+You must configure your partytime.conf file and reboot. PartyTime will not work as you see in the video until you have done this.  
+# 
+
 ## Installation
 
 1. Download latest release.
@@ -29,15 +36,13 @@ Upon logout,shutdown or reboot, the machine is added back to the groups.
 			4. Press `enter`
 			5. Click `Save` at bottom of app
 ![Backburner AddUser gif](https://github.com/instinctual/partytime/blob/3a3d93d6c8312fb857224a0cc9ebd336278c1ff0/adduser.gif)
-  3.  **Reboot**
-
+#
 You can test functionality via the command line.
 
 `/opt/instinctual/partytime/partytime.sh --add` will add the machine to the group(s) defined.
 
 `/opt/instinctual/partytime/partytime.sh --remove` will remove the machine from the group(s) defined.
-
+## When machine has Teradici/PCoIP active, PartyTime will act in a "remove always" mode, since Burn and other GPU based renders won't work.
+#
 ## Un-Install
 1. run `sudo ./INSTALL.sh --uninstall`
-
-## When machine has Teradici/PCoIP active, PartyTime will act in a "remove always" mode, since Burn and other GPU based renders won't work.
