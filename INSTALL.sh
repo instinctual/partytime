@@ -20,6 +20,19 @@ show_usage() {
     echo "  --uninstall     Un-install Partytime"
 }
 
+check_internet(){
+ echo "Testing for Internet connectivity to google.com.  Please wait."
+      ping -W2 -c1 google.com > /dev/null
+      if [ $? -eq 0 ]
+        then
+          echo "Internet is good.  Moving On."
+          echo
+        else
+          echo "Installer needs Internet connectivity. Open the firewall and try again."
+          exit 0
+      fi
+      }
+
 # No options means we should display usage
 if [[ $# -eq 0 ]]; then
     show_usage
@@ -53,17 +66,6 @@ if [[ $ACTION == "install" ]]; then
       echo
       echo "xmlstarlet is NOT installed."
       read -p "Do you want to install xmlstarlet? This will also install epel-release and requires an Internet Connection. (y/n) " choice
-
-      echo "Testing for Internet connectivity to google.com.  Please wait."
-      ping -W2 -c1 google.com > /dev/null
-      if [ $? -eq 0 ]
-        then
-          echo "Internet is good.  Moving On."
-          echo
-        else
-          echo "Installer needs Internet connectivity. Open the firewall and try again."
-          exit 0
-      fi
 
       case $choice in
           y|Y)

@@ -41,12 +41,13 @@ done
 while true; do
     # Ping the host with a single packet
     /opt/Autodesk/wiretap/tools/current/wiretap_ping -t 100 -h $BBMANAGER:Backburner
-    
-    # Check if the ping was successful
+    # Check if the last command was successful
     if [ $? -eq 0 ]; then
+        echo "Ping successful!"
         break
     else
-        sleep 1
+        echo "Ping failed. Retrying in 10 seconds..."
+        sleep 10
     fi
 done
 
