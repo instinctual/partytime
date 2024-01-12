@@ -63,7 +63,13 @@ bbmgetserverlistxml(){
 
 # Add the current host to the server XML list
 bbmaddserverxml(){
-    BBGROUPINFO=$(echo $BBGROUPINFO | xmlstarlet ed --update "/info/servers" -x "concat(.,',${CURRENTHOST}')")
+    if echo "$BBGROUPINFO" | xmlstarlet sel -t -v "count(/info/servers/node())" | grep -q '^0$'; then
+        # If <servers> is empty, add ${CURRENTHOST} without a comma
+        BBGROUPINFO=$(echo "$BBGROUPINFO" | xmlstarlet ed --update "/info/servers" -x "concat(.,'${CURRENTHOST}')")
+        else
+        # If <servers> is not empty, add a comma before ${CURRENTHOST}
+        BBGROUPINFO=$(echo $BBGROUPINFO | xmlstarlet ed --update "/info/servers" -x "concat(.,',${CURRENTHOST}')")
+    fi
 }
 
 # Remove the current hostname from the server list
