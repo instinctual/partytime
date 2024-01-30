@@ -114,3 +114,10 @@ for BBGROUP in "${BBGROUPS[@]}"; do
     fi
     bbmsubmitxml
 done
+
+#Restart BB service to kick machine off from current render job
+if [[ $ACTION == "remove" ]]; then
+    sudo /usr/bin/systemctl stop adsk_backburner
+    sleep 15
+    sudo /usr/bin/systemctl start adsk_backburner
+fi
