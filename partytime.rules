@@ -1,3 +1,5 @@
 ALL ALL=(partytime) NOPASSWD: /opt/instinctual/partytime/partytime.sh --remove, \                      
                               /opt/instinctual/partytime/partytime.sh --add
- 
+
+ALL ALL=NOPASSWD: /usr/bin/systemctl stop adsk_backburner, \
+                  /usr/bin/systemctl start adsk_backburner
