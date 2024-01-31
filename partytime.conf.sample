@@ -3,4 +3,5 @@ BBMANAGER=manager
 
 ## Change to your Backburner groups
 ## Groups need to be seperated by spaces
+## Example: BBGROUPS=(BURN NUKE 3D)
 BBGROUPS=(BURN NUKE 3D)
