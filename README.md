@@ -23,6 +23,9 @@ You must configure your partytime.conf file and reboot. PartyTime will not work 
 3.  `cd partytime-`*version number*
 4. run `sudo ./INSTALL.sh --install`
 
+## Security
+A sudo rule is added as /etc/sudoers.d/partytime that allows **ALL** users to restart the adsk_backburner service.  This is neccessary to kick off the local machine from a render job when someone logs in.  Unfortunately this is the only workaround until Autodesk fixes Backburner Manager.
+
 ### **Required Configuration:**
 
 1.  **Modify Configuration file**
