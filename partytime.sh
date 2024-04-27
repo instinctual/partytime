@@ -10,6 +10,8 @@ show_usage() {
     echo "  --remove    Remove host from Backburner Group"
 }
 
+ TMPFILE=$(mktemp)
+
 # No options means we should display usage
 if [[ $# -eq 0 ]]; then
     show_usage
@@ -84,8 +86,10 @@ bbmupdateserverlistxml(){
 
 #Sumbit the modified XML list to Backburner Manager
 bbmsubmitxml(){
-    /opt/Autodesk/wiretap/tools/current/wiretap_set_metadata -h $BBMANAGER:Backburner -n /servergroups/$BBGROUP -s info -f /dev/stdin <<<"$BBGROUPINFO"
+    echo "$BBGROUPINFO" > $TMPFILE
+    /opt/Autodesk/wiretap/tools/current/wiretap_set_metadata -h $BBMANAGER:Backburner -n /servergroups/$BBGROUP -s info -f $TMPFILE
     sleep 2
+    rm $TMPFILE
 }
 
 # Check if PCOIP is active.  If so, then override ACTION and set to 'remove' since Burn expects to have a local window manager running and errors out if not.  
